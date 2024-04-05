@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/barbie-6" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Code like Barbie!</title>
+    <style>
+      @import url("https://fonts.cdnfonts.com/css/barbie-6");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Barbie", sans-serif;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 10%;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        color: white;
+        font-size: 45px;
+      }
+      .navBar a {
+        display: inline-block;
+        font-family: 35px;
+        text-decoration: none;
+        font-weight: 450;
+        margin-left: 35px;
+        transition: 0.3s;
+        color: rgb(16, 16, 16);
+        height: auto;
+        cursor: pointer;
+        font-size: large;
+        transition: 0.4s ease;
+      }
+      .navBar a:hover,
+      .navBar a.Main {
+        color: rgb(255, 248, 234);
+        cursor: pointer;
+      }
+
+      .logo {
+        color: white;
+        text-decoration: none;
+      }
+
+      body {
+        background: rgb(255, 210, 245);
+        color: white;
+      }
+
+      section {
+        padding: 100px 200px;
+      }
+
+      .Intro {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .Intro .content {
+        z-index: 888;
+        color: white;
+        width: 70%;
+        margin-top: 50px;
+      }
+
+      .Intro .content h1 {
+        font-size: 4em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        line-height: 70px;
+        margin-bottom: 35px;
+        text-align: center;
+      }
+      .Intro .content span {
+        text-transform: lowercase;
+        font-size: 1.2em;
+        font-weight: 400;
+        text-align: center;
+      }
+      .Intro .content p {
+        margin-bottom: 65px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 20px;
+      }
+      .Intro .content a {
+        text-decoration: none;
+        background: rgb(245, 112, 216);
+        padding: 15px 35px;
+        font-size: 1.2em;
+        font-weight: 400;
+        border-radius: 30px;
+        letter-spacing: auto;
+        text-align: center;
+        width: fit-content;
+        padding: 15px 20px;
+        margin: 20px auto;
+        display: block;
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+        border-radius: 30px;
+        box-shadow: 0 0 10px white;
+        position: relative;
+      }
+      .Intro .content a:hover {
+        color: white;
+        transition: 0.3s;
+      }
+      .Intro .socialMedia a {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 3px solid;
+        border-radius: 50%;
+        font-size: 20px;
+        text-decoration: none;
+        color: black;
+        margin: auto;
+      }
+
+      .Intro .socialMedia {
+        position: absolute;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        z-index: 888;
+        flex-direction: column;
+        transition: 0.5s ease;
+        right: 30px;
+        transition: 0.5s ease;
+      }
+
+      .Intro .socialMedia a:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      .Intro .socialMedia a:hover {
+        transform: scale(1.3);
+        color: white;
+      }
+      .Intro video {
+        z-index: 000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .vidNav {
+        z-index: 888;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(70px);
+        margin-bottom: 12px;
+      }
+
+      .vidNav .Navbtns {
+        width: 12px;
+        height: 12px;
+        background: white;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0 2px wheat;
+        transition: 0.4s ease;
+      }
+
+      .vidNav .Navbtns.active {
+        background: palevioletred;
+      }
+
+      .vidNav .Navbtns:last-child {
+        margin: 10px;
+      }
+      .vidNav .Navbtns:not(:last-child) {
+        margin: 10px;
+      }
+      .vidNav .Navbtns:hover {
+        transform: scale(1.5);
+      }
+
+      .vidSlider {
+        position: absolute;
+        width: 100%;
+        clip-path: circle(0% at 0 50%);
+      }
+
+      .vidSlider.active {
+        clip-path: circle(150% at 0 50%);
+      }
+
+      @media (max-width: 1040px) {
+        header {
+          padding: 20px 10px;
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: rgba(1, 1, 1, 0.5);
+        }
+        section {
+          padding: 100px 20px;
+        }
+
+        .Intro .socialMedia {
+          right: 30px;
+        }
+        header .navBar {
+          display: none;
+        }
+        .menuBtn {
+          background: url() no-repeat;
+          background-size: 30px;
+          background-position: center;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          transition: 0;
+          transition: 0.3s ease;
+        }
+        .menuBtn.active {
+          z-index: 999;
+          background: url() no-repeat;
+          background-repeat: 25px;
+          background-position: center;
+          transition: 0.3s ease;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <a href="https://shop.mattel.com/pages/barbie" class="logo">
+        Hi Barbie!
+      </a>
+      <div class="menuBtn"></div>
+      <nav class="navBar">
+        <a href="" style="--i: 1" class="Main">Home </a>
+        <a
+          href="https://www.history.com/news/barbie-through-the-ages"
+          style="--i: 2"
+          >History
+        </a>
+        <a
+          href="https://www.radiotimes.com/movies/barbie-movie-cast/"
+          style="--i: 3"
+          >Actors
+        </a>
+        <a href="aboutme.html" style="--i: 4">About Me! </a>
+      </nav>
+    </header>
+    <section class="Intro">
+      <video
+        class="vidSlider"
+        src="images/wavingbarbie.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        class="vidSlider"
+        src="images/justken1.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        class="vidSlider"
+        src="images/issainbarb.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+
+      <div class="content">
+        <h1>
+          Welcome to BarbieLand! <br />
+          <span>(Kens are here too)</span>
+        </h1>
+        <p>
+          Margot Robbie is Barbie! The overzealous, fun-loving, classic doll!
+          <br />
+          Ryan Gosling is Ken! His job is beach! (Whatever that means) <br />
+          Issa Rae (my personal favorite) is President of Barbie Land!
+        </p>
+        <a
+          href="https://www.google.com/search?q=cast+of+barbie&rlz=1C5CHFA_enUS885US885&oq=barbie+movie&gs_lcrp=EgZjaHJvbWUqBwgAEAAYjwIyBwgAEAAYjwIyCggBEC4YsQMYgAQyCggCEAAYsQMYgAQyCggDEAAYsQMYgAQyCggEEAAYsQMYgAQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQg0MzEzajBqN6gCALACAA&sourceid=chrome&ie=UTF-8&si=ACFMAn9YUMd0ZXgOPzfawCMT6Mu6ehGYog682vBTo7pmIExgL2Rv77pPI8cCDRAqYqSckOd8I2OLHbehYNKOgXvkFuuLwnw7nJwK-b6xcFLjd1kwEi2mXaK6Ie_okh24hTGt2Y-RfyvCKM7ujdfvirPuFxqtO8zO9WNEeHJ8stPTe5FCxzvHG1JdI1P0T0epIay_x04k6If6rpX0blNU-hcv_6gQgYHHDDKW301ZB0b0GHwRwun2giGMjzDrt0HaXaTfq6899p0c&ictx=1&ved=2ahUKEwi63c-J8aOBAxVqp4kEHV2RDsoQyNoBKAB6BAgUEAA"
+        >
+          Learn More
+        </a>
+      </div>
+      <div class="socialMedia">
+        <a href="https://www.linkedin.com/in/nanagyekum/" style="--i: 1">
+          <i class="bx bxl-linkedin"></i
+        ></a>
+        <a href="https://github.com/nanagyekum" style="--i: 2">
+          <i class="bx bxl-github"></i>
+        </a>
+        <a href="https://www.instagram.com/nanagyekum/" style="--i: 3">
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a href="https://www.backstage.com/u/nana-agyekum/" style="--i: 4">
+          <i class="bx bx-bold"></i>
+        </a>
+      </div>
+      <div class="vidNav">
+        <div class="Navbtns active"></div>
+        <div class="Navbtns"></div>
+        <div class="Navbtns"></div>
+      </div>
+    </section>
+    <script type="text/javascript">
+      // Javascript for navigation menu
+      const menuBtn = document.querySelector(".menuBtn");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+      });
+
+      //Java script for vidslider nav
+      const btns = document.querySelectorAll(".Navbtns");
+      const slides = document.querySelectorAll(".vidSlider");
+      var vidNav = function (manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+      };
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          vidNav(i);
+        });
+      });
+    </script>
+  </body>
+</html>

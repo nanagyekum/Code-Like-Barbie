@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/barbie-6" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+
+    />
+    <title>Code like Barbie!</title>
+    <style>
+      @import url("https://fonts.cdnfonts.com/css/barbie-6");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Barbie", sans-serif;
+
+      }
+      body {
+  background:rgb(255, 210, 245);
+  color: white;
+}
+
+.header {
+    position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 10%;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        color: white;
+        font-size: 45px;
+}
+
+.logo {
+  font-size: 20px;
+  color: whitesmoke;
+  text-decoration: none;
+  font-weight: 450;
+  cursor: default;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+}
+
+.navBar a {
+  display: inline-block;
+  font-family: 35px;
+  color-scheme: pink;
+  text-decoration: none;
+  font-weight: 450;
+  margin-left: 35px;
+  transition: 0.3s;
+  color: whitesmoke;
+  height: auto;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideTop 1ms ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+.navBar a:hover,
+.navBar a.aboutMe {
+  color: pink;
+  cursor: pointer;
+}
+
+.Home {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: whitesmoke;
+  padding: 50px 10% 0;
+}
+
+.Intro {
+  max-width: 450px;
+  display: block;
+}
+
+.Intro h1 {
+  font-size: 45px;
+  color: white;
+  font-weight: 750;
+  margin: 10px 0;
+}
+
+.Intro h3 {
+  font-size: 32px;
+  font-weight: 750;
+  color: white;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.Intro h3:nth-child(2) {
+  margin-bottom: 30px;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.Intro h3 span {
+  color: pink;
+}
+
+.Intro p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.Intro p:hover {
+  color: pink;
+  transition: 0.3s;
+}
+
+.resumeBtn {
+  background: pink(238, 182, 78);
+  padding: 10px 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  display: block;
+  margin: 30px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px white;
+  font-size: 17px;
+  letter-spacing: auto;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  width: fit-content;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.resumeBtn a:hover {
+  color: white;
+  transition: 0.3s;
+}
+.homeIcons {
+  position: absolute;
+  bottom: 40px;
+  width: 200px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+.homeIcons a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 3px solid;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+  color: pink;
+  margin: auto;
+  opacity: 0;
+  animation: slideLeft 1ms ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+.homeIcons a:hover {
+  color: white;
+  box-shadow: 0 0 10px;
+  transform: scale(1.3);
+}
+
+.homeImg img {
+  max-width: 450px;
+  padding: 20px 30px;
+  border-radius: 30px;
+  opacity: 0;
+  animation: zoomIn 1ms ease forwards, floatImage 4s ease-in-out infinite;
+  animation-delay: 2s, 3s;
+}
+
+/* Animation */
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+      </style>
+      </head>
+      
+      <header class="header">
+  <a href="https://shop.mattel.com/pages/barbie" class="logo">
+        Hi Barbie!
+      </a>
+      <div class="menuBtn"></div>
+      <nav class="navBar">
+        <a href="codelikebarbie.html" style="--i: 1" class="Main">Home </a>
+        <a
+          href="https://www.history.com/news/barbie-through-the-ages"
+          style="--i: 2"
+          >History
+        </a>
+        <a
+          href="https://www.radiotimes.com/movies/barbie-movie-cast/"
+          style="--i: 3"
+          >Actors
+        </a>
+        <a href="aboutme.html" style="--i: 4" class="aboutMe">About Me! </a>
+      </nav>
+    </header>
+
+       <section class="Home">
+      <div class="Intro">
+        <h3>Welcome!</h3>
+        <h1>I'm Nana Agyekum</h1>
+
+        <h3>I'm a <span class="alotText"></span></h3>
+        <p>
+          I'm an alumna from Ohio University that currently works as an office
+          assistant.<br />
+          I've had a love for technology and innovation for a long time, I'm
+          excited for you to see all my hardwork in a fun way!
+        </p>
+
+        <div class="homeIcons">
+          <a href="https://www.linkedin.com/in/nanagyekum/" style="--i: 1">
+            <i class="bx bxl-linkedin"></i
+          ></a>
+          <a href="https://github.com/nanagyekum" style="--i: 2">
+            <i class="bx bxl-github"></i>
+          </a>
+          <a href="https://www.instagram.com/nanagyekum/" style="--i: 3">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.backstage.com/u/nana-agyekum/" style="--i: 4">
+            <i class="bx bx-bold"></i>
+          </a>
+        </div>
+        <a href="documents/Nana O. Agyekum Resume 2023 1.pdf" class="resumeBtn">
+          Download Resume
+        </a>
+      </div>
+
+      <div class="homeImg">
+        <img src="images/IMG_1645.jpeg" alt="" />
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
